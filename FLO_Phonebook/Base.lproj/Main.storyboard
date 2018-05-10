@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4ia-iq-iFH">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Phonebook-->
+        <scene sceneID="EOv-jZ-eRf">
+            <objects>
+                <tableViewController title="Phonebook" id="5AY-cc-7R2" customClass="ContactsTableViewController" customModule="FLO_Phonebook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MIM-sL-3Br">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" searchBarStyle="minimal" id="2Z6-rE-73o">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="5AY-cc-7R2" id="kBD-hU-BXN"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="contactCell" id="phr-T7-HOg" customClass="ContactsTableViewCell" customModule="FLO_Phonebook" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="phr-T7-HOg" id="VA8-d9-3Jb">
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQ0-cI-K6M">
+                                            <rect key="frame" x="20" y="21.5" width="313" height="0.0"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="kQ0-cI-K6M" secondAttribute="trailing" constant="8" id="2Lw-HL-onf"/>
+                                        <constraint firstItem="kQ0-cI-K6M" firstAttribute="centerY" secondItem="VA8-d9-3Jb" secondAttribute="centerY" id="Dd1-gX-omH"/>
+                                        <constraint firstItem="kQ0-cI-K6M" firstAttribute="leading" secondItem="VA8-d9-3Jb" secondAttribute="leading" constant="20" id="zEc-Yw-s0Y"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="kQ0-cI-K6M" id="Zgc-7E-CbR"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="5AY-cc-7R2" id="pWy-Hy-MwP"/>
+                            <outlet property="delegate" destination="5AY-cc-7R2" id="k8b-dI-hgg"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Contacts" id="gBW-YI-P9T"/>
+                    <connections>
+                        <outlet property="searchBar" destination="2Z6-rE-73o" id="yJC-UL-seu"/>
+                        <segue destination="YmN-P8-pve" kind="show" identifier="showContactDetails" id="Jfa-hN-ngi"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IP6-QI-G0h" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1197" y="684"/>
+        </scene>
+        <!--Details-->
+        <scene sceneID="MVg-Yc-6nC">
+            <objects>
+                <viewController title="Details" id="YmN-P8-pve" customClass="ContactDetailsViewController" customModule="FLO_Phonebook" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="15e-wN-7KR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="frK-rS-11y">
+                                <rect key="frame" x="0.0" y="116" width="375" height="551"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZBM-qm-ghC">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="20.5"/>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="ZBM-qm-ghC" secondAttribute="bottom" id="5Uh-yR-9qO"/>
+                                    <constraint firstItem="ZBM-qm-ghC" firstAttribute="top" secondItem="frK-rS-11y" secondAttribute="top" id="Fm6-CN-VX8"/>
+                                    <constraint firstItem="ZBM-qm-ghC" firstAttribute="leading" secondItem="frK-rS-11y" secondAttribute="leading" id="GX6-K6-wda"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZBM-qm-ghC" secondAttribute="trailing" id="Khj-3k-E6H"/>
+                                    <constraint firstItem="ZBM-qm-ghC" firstAttribute="width" secondItem="frK-rS-11y" secondAttribute="width" id="vGH-oc-Akn"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="frK-rS-11y" firstAttribute="top" secondItem="vWl-KX-O6w" secondAttribute="top" id="7wc-VM-2Nf"/>
+                            <constraint firstItem="frK-rS-11y" firstAttribute="trailing" secondItem="vWl-KX-O6w" secondAttribute="trailing" id="Hmb-Z8-Ah5"/>
+                            <constraint firstItem="frK-rS-11y" firstAttribute="leading" secondItem="vWl-KX-O6w" secondAttribute="leading" id="NXN-tY-J2w"/>
+                            <constraint firstItem="frK-rS-11y" firstAttribute="bottom" secondItem="vWl-KX-O6w" secondAttribute="bottom" id="o6a-sJ-zcA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="vWl-KX-O6w"/>
+                    </view>
+                    <connections>
+                        <outlet property="stackView" destination="ZBM-qm-ghC" id="WRS-76-zb9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="snP-AM-Vqa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1917.5999999999999" y="682.3088455772114"/>
+        </scene>
+        <!--Phonebook-->
+        <scene sceneID="e5B-8v-V8o">
+            <objects>
+                <navigationController title="Phonebook" id="4ia-iq-iFH" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="4sq-XG-yfq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="5AY-cc-7R2" kind="relationship" relationship="rootViewController" id="2A2-CU-dzS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hVp-h7-XCy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="244" y="684"/>
+        </scene>
+    </scenes>
+</document>

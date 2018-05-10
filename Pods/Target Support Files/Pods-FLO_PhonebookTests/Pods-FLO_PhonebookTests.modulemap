@@ -1,0 +1,6 @@
+framework module Pods_FLO_PhonebookTests {
+  umbrella header "Pods-FLO_PhonebookTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

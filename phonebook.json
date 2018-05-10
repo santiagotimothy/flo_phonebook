@@ -1,0 +1,54 @@
+{
+	"contacts": [
+         {
+		"name": "John Doe",
+		"birthdate": "January 1, 2018",
+		"age": "20",
+		"sex": "Male",
+		"status": "Married",
+		"contactDetails": {
+			"email": "johndoe@email.com",
+			"address": "1 Block 2nd street, Knowhere",
+			"mobileNumber": "+12339572832"
+		},
+		"friends" :[
+			{
+				"name": "Jane Smith",
+				"birthdate": "January 2, 2018",
+				"age": "18",
+				"sex": "Female",
+				"status": "Single",
+				"contactDetails": {
+					"email": "jane@email.com",
+					"address": "2nd Block 2nd street, Knowhere",
+					"mobileNumber": "+123215529392"
+				}
+			}]
+        },
+         {
+         "name": "Sarah Fortune",
+         "birthdate": "January 1, 2018",
+         "age": "20",
+         "sex": "Male",
+         "status": "Married",
+         "contactDetails": {
+         "email": "johndoe@email.com",
+         "address": "1 Block 2nd street, Knowhere",
+         "mobileNumber": "+12339572832"
+         },
+         "friends" :[
+                     {
+                     "name": "Jane Smith",
+                     "birthdate": "January 2, 2018",
+                     "age": "18",
+                     "sex": "Female",
+                     "status": "Single",
+                     "contactDetails": {
+                     "email": "jane@email.com",
+                     "address": "2nd Block 2nd street, Knowhere",
+                     "mobileNumber": "+123215529392"
+                     }
+                     }]
+         }
+     ]
+}
